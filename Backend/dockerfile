@@ -1,0 +1,10 @@
+FROM node:20-alpine
+
+#  . means move to image wokrdir
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+COPY . .
+
+CMD ["node", "server.js"]
